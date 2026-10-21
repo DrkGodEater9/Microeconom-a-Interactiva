@@ -1,0 +1,49 @@
+@media (max-width: 1000px) {
+  .fig-body {
+    grid-template-columns: 1fr;
+  }
+  .fig-side {
+    padding: 4px 18px 18px;
+  }
+}
+@media (max-width: 900px) {
+  body {
+    font-size: 17px;
+  }
+  .shell {
+    display: block;
+  }
+  .menu-btn {
+    display: inline-flex;
+  }
+  .side {
+    position: fixed;
+    top: calc(env(safe-area-inset-top, 0px) + var(--hh));
+    left: 0;
+    bottom: 0;
+    width: min(86vw, 330px);
+    height: auto;
+    z-index: 70;
+    transform: translateX(-102%);
+    transition: transform 0.22s ease;
+  }
+  body.nav-open .side {
+    transform: none;
+  }
+  body.nav-open .scrim {
+    display: block;
+    position: fixed;
+    inset: 0;
+    background: rgba(0, 0, 0, 0.45);
+    z-index: 65;
+  }
+  .progress {
+    display: none;
+  }
+}
+@media (prefers-reduced-motion: reduce) {
+  * {
+    transition: none !important;
+    animation: none !important;
+  }
+}

@@ -1,0 +1,40 @@
+.credits {
+  margin-top: 56px;
+  padding-top: 18px;
+  border-top: 2px solid var(--ink);
+  font-family: var(--ui);
+  font-size: 15px;
+  line-height: 1.55;
+  max-width: 760px;
+}
+.credits h2 {
+  font-family: var(--head);
+  font-size: 24px;
+  margin: 0 0 10px;
+}
+.credits dl {
+  margin: 0;
+  display: grid;
+  grid-template-columns: 150px minmax(0, 1fr);
+  gap: 6px 16px;
+}
+.credits dt {
+  font-weight: 700;
+  color: var(--muted);
+}
+.credits dd {
+  margin: 0;
+}
+.credits p.note {
+  margin: 14px 0 0;
+  color: var(--muted);
+  font-size: 13.5px;
+}
+@media (max-width: 600px) {
+  .credits dl {
+    grid-template-columns: 1fr;
+  }
+  .credits dt {
+    margin-top: 6px;
+  }
+}

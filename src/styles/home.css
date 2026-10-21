@@ -1,0 +1,75 @@
+/* portada */
+.hero h1 {
+  font-family: var(--head);
+  font-weight: 700;
+  font-size: clamp(32px, 4.6vw, 50px);
+  line-height: 1.1;
+  letter-spacing: -0.01em;
+  margin: 0 0 14px;
+  max-width: 18em;
+}
+.hero p.lead {
+  font-size: 20px;
+  max-width: 44em;
+  color: var(--muted);
+  margin: 0 0 26px;
+}
+.how {
+  font-family: var(--ui);
+  font-size: 16px;
+  margin: 8px 0 12px;
+  padding: 14px 0;
+  border-top: 1px solid var(--line);
+  border-bottom: 1px solid var(--line);
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(230px, 1fr));
+  gap: 12px 28px;
+}
+.how div b {
+  display: block;
+}
+.part-title {
+  font-family: var(--head);
+  font-size: 22px;
+  font-weight: 700;
+  margin: 38px 0 6px;
+  padding-bottom: 6px;
+  border-bottom: 2px solid var(--pc);
+  color: var(--ink);
+}
+.toc {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+.toc a {
+  display: grid;
+  grid-template-columns: 48px minmax(0, 1fr);
+  gap: 4px 10px;
+  padding: 12px 8px;
+  border-bottom: 1px solid var(--line);
+  text-decoration: none;
+  color: var(--ink);
+}
+.toc a:hover {
+  background: var(--surface);
+}
+.toc .cn {
+  font-family: var(--ui);
+  font-weight: 700;
+  color: var(--pc);
+  font-size: 20px;
+  grid-row: span 2;
+}
+.toc .ct {
+  font-family: var(--head);
+  font-weight: 600;
+  font-size: 19px;
+  line-height: 1.25;
+}
+.toc .cd {
+  font-family: var(--ui);
+  font-size: 15px;
+  color: var(--muted);
+  line-height: 1.4;
+}

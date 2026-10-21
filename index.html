@@ -1,0 +1,55 @@
+<!doctype html>
+<html lang="es">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+    <meta
+      name="description"
+      content="Guía interactiva de microeconomía por capítulos, con gráficas que se pueden tocar y mover."
+    />
+    <title>Microeconomía interactiva</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Source+Sans+3:wght@400;600;700&family=Source+Serif+4:ital,opsz,wght@0,8..60,400;0,8..60,600;0,8..60,700;1,8..60,400&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+  <body>
+    <header class="topbar">
+      <button
+        class="iconbtn menu-btn"
+        id="menuBtn"
+        type="button"
+        aria-label="Abrir índice de capítulos"
+        aria-controls="side"
+      >
+        ☰ Capítulos
+      </button>
+      <a class="brand" href="#/">
+        <svg class="brand-mark" viewBox="0 0 24 24" aria-hidden="true">
+          <path d="M3 3v18h18" fill="none" stroke="currentColor" stroke-width="2" />
+          <path d="M5 6c5 1 9 6 15 13" fill="none" stroke="var(--blue)" stroke-width="2.2" />
+          <path d="M5 18c5-1 9-6 15-13" fill="none" stroke="var(--red)" stroke-width="2.2" />
+        </svg>
+        <span>Microeconomía interactiva</span>
+      </a>
+      <span class="sp"></span>
+      <button
+        class="iconbtn"
+        id="themeBtn"
+        type="button"
+        aria-label="Cambiar entre modo claro y oscuro"
+      >
+        ◐ Tema
+      </button>
+    </header>
+    <div class="shell">
+      <nav class="side" id="side" aria-label="Capítulos"></nav>
+      <main id="main" tabindex="-1"></main>
+    </div>
+    <div class="scrim" id="scrim"></div>
+    <noscript>Esta guía necesita JavaScript para mostrar las gráficas interactivas.</noscript>
+    <script type="module" src="/src/main.js"></script>
+  </body>
+</html>

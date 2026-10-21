@@ -1,0 +1,316 @@
+/* figura interactiva */
+.fig {
+  background: var(--surface);
+  border: 1px solid var(--line);
+  margin: 28px 0 32px;
+  overflow: hidden;
+}
+.fig-head {
+  padding: 14px 20px 10px;
+  border-bottom: 1px solid var(--line);
+}
+.fig-head h4 {
+  font-family: var(--head);
+  font-size: 19px;
+  line-height: 1.25;
+  margin: 0 0 4px;
+}
+.fig-head p {
+  font-family: var(--ui);
+  font-size: 15px;
+  line-height: 1.5;
+  color: var(--muted);
+  margin: 0;
+}
+.fig-body {
+  display: grid;
+  grid-template-columns: minmax(0, 1.15fr) minmax(0, 0.85fr);
+}
+.fig-main {
+  padding: 12px 12px 12px 16px;
+  min-width: 0;
+}
+.fig-side {
+  padding: 16px 20px 18px 10px;
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+  min-width: 0;
+  font-family: var(--ui);
+}
+.plot-title {
+  font-family: var(--ui);
+  font-size: 14px;
+  font-weight: 700;
+  color: var(--muted);
+  margin: 2px 0 2px 6px;
+}
+.plot svg {
+  width: 100%;
+  height: auto;
+  display: block;
+  touch-action: manipulation;
+  user-select: none;
+  -webkit-user-select: none;
+}
+.plot svg .bgp {
+  fill: var(--plot);
+  stroke: var(--line);
+}
+.plot svg .gridl {
+  stroke: var(--grid);
+  stroke-width: 1;
+}
+.plot svg .axis {
+  stroke: var(--ink);
+  stroke-width: 1.6;
+  opacity: 0.75;
+}
+.plot svg text {
+  font-family: var(--ui);
+  fill: var(--ink);
+  font-size: 13px;
+}
+.plot svg text.tick {
+  fill: var(--muted);
+  font-size: 12px;
+}
+.plot svg text.axt {
+  fill: var(--muted);
+  font-size: 13px;
+  font-weight: 700;
+}
+.plot svg text.lab {
+  font-size: 13.5px;
+  font-weight: 700;
+  paint-order: stroke;
+  stroke: var(--halo);
+  stroke-width: 4px;
+  stroke-linejoin: round;
+}
+.plot svg .el {
+  transition: opacity 0.15s;
+}
+.plot svg .el.hit {
+  cursor: pointer;
+}
+.plot svg.has-active .el.hit:not(.is-active) {
+  opacity: 0.28;
+}
+.plot svg .el.is-active .shape {
+  filter: drop-shadow(0 0 4px currentColor);
+}
+.plot svg .el.is-active path.line {
+  stroke-width: 5.5;
+}
+.plot svg .el.is-active .areaf {
+  fill-opacity: 0.55;
+}
+.fig-legend {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+  margin: 8px 4px 2px;
+  font-family: var(--ui);
+}
+.chip {
+  display: inline-flex;
+  align-items: center;
+  gap: 7px;
+  border: 1px solid var(--line);
+  background: var(--surface);
+  border-radius: 3px;
+  padding: 4px 10px 4px 8px;
+  font-size: 13.5px;
+  font-weight: 600;
+  cursor: pointer;
+  line-height: 1.2;
+}
+.chip i {
+  width: 12px;
+  height: 12px;
+  display: inline-block;
+  background: var(--c);
+  border-radius: 50%;
+}
+.chip.sq i {
+  border-radius: 0;
+}
+.chip:hover,
+.chip.on {
+  border-color: var(--ink);
+  background: var(--surface2);
+}
+.ctl {
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+}
+.ctl label,
+.ctl .lbl {
+  font-size: 14.5px;
+  font-weight: 700;
+  display: flex;
+  justify-content: space-between;
+  gap: 8px;
+}
+.ctl .val {
+  color: var(--accent);
+  font-variant-numeric: tabular-nums;
+  white-space: nowrap;
+}
+.ctl input[type='range'] {
+  width: 100%;
+  accent-color: var(--accent);
+  height: 30px;
+  margin: 0;
+}
+.ctl .hint {
+  font-size: 13.5px;
+  line-height: 1.4;
+  color: var(--muted);
+}
+.seg {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0;
+}
+.seg button {
+  border: 1px solid var(--line);
+  margin: 0 -1px -1px 0;
+  background: var(--surface);
+  padding: 6px 11px;
+  font-size: 13.5px;
+  font-weight: 600;
+  cursor: pointer;
+  line-height: 1.25;
+}
+.seg button.on {
+  background: var(--accent);
+  border-color: var(--accent);
+  color: #fff;
+  position: relative;
+}
+:root[data-theme='dark'] .seg button.on {
+  color: #0e1117;
+}
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme='light']) .seg button.on {
+    color: #0e1117;
+  }
+}
+.btn {
+  border: 1px solid var(--accent);
+  background: var(--surface);
+  color: var(--accent);
+  padding: 8px 14px;
+  font-size: 14.5px;
+  font-weight: 700;
+  cursor: pointer;
+}
+.btn:hover {
+  background: var(--accent);
+  color: #fff;
+}
+.tog {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font-size: 14.5px;
+  font-weight: 700;
+  cursor: pointer;
+}
+.tog input {
+  width: 20px;
+  height: 20px;
+  accent-color: var(--accent);
+}
+.readouts {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
+  gap: 8px;
+}
+.tile {
+  background: var(--surface2);
+  padding: 7px 11px;
+  border-left: 4px solid var(--c, var(--line));
+}
+.tile span {
+  display: block;
+  font-size: 12.5px;
+  color: var(--muted);
+  line-height: 1.25;
+}
+.tile b {
+  font-size: 18px;
+  font-variant-numeric: tabular-nums;
+}
+.fig-info {
+  border: 1px solid var(--line);
+  padding: 11px 14px;
+  font-size: 14.5px;
+  line-height: 1.5;
+  min-height: 92px;
+  background: var(--surface);
+  border-left: 5px solid var(--c, var(--line));
+}
+.fig-info h5 {
+  font-family: var(--head);
+  font-size: 16.5px;
+  margin: 0 0 3px;
+  line-height: 1.25;
+}
+.fig-info p {
+  margin: 4px 0 0;
+}
+.fig-info.idle {
+  color: var(--muted);
+  border-style: dashed;
+  border-left-width: 1px;
+}
+.fig-status {
+  background: var(--surface2);
+  padding: 11px 14px;
+  font-size: 14.5px;
+  line-height: 1.5;
+  border-top: 3px solid var(--accent);
+}
+.fig-status b.t {
+  display: block;
+  font-family: var(--head);
+  font-size: 15.5px;
+  margin-bottom: 3px;
+}
+.fig-status p {
+  margin: 4px 0 0;
+}
+.fig-tasks {
+  border-top: 1px solid var(--line);
+  padding: 12px 20px 14px;
+  font-family: var(--ui);
+  font-size: 15px;
+  background: var(--surface2);
+}
+.fig-tasks > b {
+  display: block;
+  margin-bottom: 6px;
+  font-size: 15.5px;
+}
+.fig-tasks details {
+  margin: 4px 0;
+  border-left: 3px solid var(--line);
+  padding: 2px 0 2px 12px;
+}
+.fig-tasks summary {
+  cursor: pointer;
+  font-weight: 600;
+  line-height: 1.4;
+}
+.fig-tasks details[open] {
+  border-left-color: var(--green);
+}
+.fig-tasks details p {
+  margin: 6px 0 4px;
+  color: var(--ink);
+  line-height: 1.5;
+}

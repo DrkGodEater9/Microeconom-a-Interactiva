@@ -1,0 +1,132 @@
+/* barra superior */
+.topbar {
+  position: sticky;
+  top: env(safe-area-inset-top, 0px);
+  z-index: 50;
+  height: var(--hh);
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  padding: 0 20px;
+  background: var(--surface);
+  border-bottom: 1px solid var(--line);
+}
+.topbar .brand {
+  font-family: var(--head);
+  font-weight: 700;
+  font-size: 18px;
+  text-decoration: none;
+  color: var(--ink);
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+.brand-mark {
+  width: 22px;
+  height: 22px;
+  flex: none;
+}
+.topbar .sp {
+  flex: 1;
+}
+.iconbtn {
+  border: 1px solid var(--line);
+  background: var(--surface);
+  border-radius: 4px;
+  height: 34px;
+  min-width: 34px;
+  padding: 0 12px;
+  cursor: pointer;
+  font-size: 14px;
+  font-weight: 600;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+}
+.iconbtn:hover {
+  border-color: var(--ink);
+}
+.menu-btn {
+  display: none;
+}
+.progress {
+  font-family: var(--ui);
+  font-size: 14px;
+  color: var(--muted);
+}
+.progress b {
+  color: var(--ink);
+}
+
+/* estructura */
+.shell {
+  display: grid;
+  grid-template-columns: 300px minmax(0, 1fr);
+  align-items: start;
+}
+.side {
+  position: sticky;
+  top: calc(env(safe-area-inset-top, 0px) + var(--hh));
+  height: calc(100vh - var(--hh) - env(safe-area-inset-top, 0px));
+  overflow: auto;
+  padding: 18px 12px 40px 20px;
+  border-right: 1px solid var(--line);
+  background: var(--surface);
+}
+.side h6 {
+  margin: 20px 0 4px;
+  font-family: var(--ui);
+  font-size: 13.5px;
+  font-weight: 700;
+  color: var(--muted);
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+.side h6::before {
+  content: '';
+  width: 9px;
+  height: 9px;
+  background: var(--pc);
+  flex: none;
+}
+.side h6:first-child {
+  margin-top: 0;
+}
+.side a {
+  display: flex;
+  gap: 10px;
+  align-items: baseline;
+  padding: 6px 10px;
+  margin: 0;
+  text-decoration: none;
+  color: var(--ink);
+  font-family: var(--ui);
+  font-size: 15.5px;
+  line-height: 1.3;
+  border-left: 3px solid transparent;
+}
+.side a .n {
+  font-weight: 700;
+  min-width: 22px;
+  color: var(--muted);
+}
+.side a:hover {
+  background: var(--surface2);
+}
+.side a.on {
+  background: var(--surface2);
+  font-weight: 700;
+  border-left-color: var(--pc, var(--accent));
+}
+main {
+  padding: 34px clamp(16px, 3.2vw, 48px) 90px;
+  min-width: 0;
+}
+.wrap {
+  max-width: 1040px;
+  margin: 0 auto;
+}
+.scrim {
+  display: none;
+}
