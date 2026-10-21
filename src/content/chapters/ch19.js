@@ -2,7 +2,7 @@
 import { FIGS, CHAPTERS } from '../../engine/registry.js';
 import { curve } from '../../engine/math.js';
 import { fn, pct } from '../../engine/format.js';
-import { warn, fig } from '../../engine/blocks.js';
+import { warn, fig, figAgain } from '../../engine/blocks.js';
 
 FIGS.c19_risk = {
   title:'Aversión al riesgo: utilidad esperada y prima de riesgo (ejemplo ilustrativo)',
@@ -54,6 +54,7 @@ html:`
 <h2>1. Incertidumbre y riesgo</h2>
 <p>La <b>incertidumbre</b> es no saber qué ocurrirá. El <b>riesgo</b> es cuando se pueden asignar probabilidades a los resultados. La <b>utilidad esperada</b> es el promedio de las utilidades de los resultados posibles, ponderado por su probabilidad.</p>
 <p>Como la utilidad marginal de la riqueza es decreciente, perder $10 000 duele más de lo que alegra ganar $10 000. Eso hace que la mayoría de las personas sean <b>aversas al riesgo</b>.</p>
+${figAgain('c7_ut')}
 ${fig('c19_risk')}
 <h2>2. Seguros y diversificación</h2>
 <ul>
@@ -66,6 +67,7 @@ ${fig('c19_risk')}
 <li><b>Selección adversa:</b> la información oculta se da <i>antes</i> del trato. Ejemplo: quienes saben que están enfermos compran más seguro médico, y la aseguradora atrae a los peores riesgos. Ejemplo clásico de Akerlof: autos usados («limones»).</li>
 <li><b>Riesgo moral:</b> la acción oculta ocurre <i>después</i> del trato. Ejemplo: una persona asegurada contra robo se cuida menos de que le roben.</li>
 </ul>
+${figAgain('c3_eq')}
 ${fig('c19_lemon')}
 <h3>Cómo se enfrentan</h3>
 <ul>

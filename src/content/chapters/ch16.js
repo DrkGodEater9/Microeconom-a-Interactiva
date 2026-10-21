@@ -2,7 +2,7 @@
 import { FIGS, CHAPTERS } from '../../engine/registry.js';
 import { curve, bisect } from '../../engine/math.js';
 import { f$, fn } from '../../engine/format.js';
-import { warn, fig } from '../../engine/blocks.js';
+import { warn, fig, figAgain } from '../../engine/blocks.js';
 
 FIGS.c16_class = {
   title:'Cuatro tipos de bienes: rivalidad y exclusión',
@@ -81,6 +81,7 @@ ${fig('c16_class')}
 <p>Un <b>bien público</b> es no rival y no excluible. El <b>polizón</b> es la persona que disfruta de un bien sin pagar su parte. Como no se puede excluir a nadie, nadie tiene motivo para pagar: si los demás lo pagan, disfrutas igual; si nadie lo paga, tú solo no lo harías. Resultado: <b>subprovisión</b>.</p>
 <h3>Cuánto producir: suma vertical</h3>
 <p>Para un bien <b>privado</b>, la demanda del mercado suma <i>horizontalmente</i> (cantidades) porque cada persona consume unidades distintas. Para un bien <b>público</b>, todos consumen la <i>misma</i> unidad, así que se suman <b>verticalmente</b> las disposiciones a pagar. La cantidad eficiente es donde el <b>beneficio marginal social</b> (la suma vertical) iguala al <b>costo marginal</b>.</p>
+${figAgain('c3_dem')}
 ${fig('c16_public')}
 <h3>Provisión privada, pública y voto</h3>
 <ul>
@@ -89,11 +90,13 @@ ${fig('c16_public')}
 <li><b>Burócratas:</b> quieren más presupuesto: tienden a producir más de lo eficiente.</li>
 </ul>
 <p>La mejor decisión: comparar el beneficio marginal social con el costo marginal (análisis costo-beneficio). Es difícil porque los beneficios no se observan en precios.</p>
+${figAgain('c15_pos')}
 
 <h2>3. Recursos comunes</h2>
 <p>Un recurso común es rival pero no excluible: <b>peces en el océano, pastizales, bosques tropicales, el agua subterránea</b>. Como nadie puede ser excluido, todos lo explotan hasta el punto en que ya no obtienen ganancia. El resultado se conoce como <b>tragedia de los comunes</b>.</p>
 ${fig('c16_commons')}
 <p>El problema es una <b>externalidad</b>: cada pescador que entra reduce la pesca de todos los demás, pero no lo toma en cuenta. Por eso hay sobrepesca y desaparición de bosques.</p>
+${figAgain('c15_neg')}
 <h3>Soluciones</h3>
 <ul>
 <li><b>Derechos de propiedad:</b> si alguien es dueño, cuida el recurso (privatización, comunidades con reglas).</li>

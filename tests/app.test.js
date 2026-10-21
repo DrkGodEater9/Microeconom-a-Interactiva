@@ -53,6 +53,26 @@ describe('aplicación', () => {
     }
   });
 
+  it('las gráficas plegables se montan solo al abrirse', async () => {
+    await go('#/c5');
+    const det = document.querySelector('#main details.figref');
+    expect(det).not.toBeNull();
+    expect(det.querySelector('summary').textContent).toContain('Ver de nuevo la gráfica');
+    expect(det.querySelector('.fig')).toBeNull();
+    det.open = true;
+    det.dispatchEvent(new Event('toggle'));
+    expect(det.querySelector('.fig')).not.toBeNull();
+  });
+
+  it('todas las gráficas plegables apuntan a figuras existentes', async () => {
+    for (const c of CHAPTERS) {
+      await go(`#/c${c.id}`);
+      document.querySelectorAll('#main details.figref').forEach((d) => {
+        expect(d.querySelector('summary').textContent, `cap ${c.id}`).not.toMatch(/no encontrada/);
+      });
+    }
+  });
+
   it('el menú lateral marca el capítulo activo', async () => {
     await go('#/c5');
     expect(document.querySelector('#side a.on').textContent).toContain('Eficiencia y equidad');

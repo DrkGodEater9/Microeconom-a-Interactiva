@@ -2,7 +2,7 @@
 import { FIGS, CHAPTERS } from '../../engine/registry.js';
 import { linspace, curve } from '../../engine/math.js';
 import { f$, fn } from '../../engine/format.js';
-import { eqn, fig, table } from '../../engine/blocks.js';
+import { eqn, fig, table, figAgain } from '../../engine/blocks.js';
 
 const PT=L=>6*L+3*L*L-.25*L*L*L, MPf=L=>6+6*L-.75*L*L, APf=L=>6+3*L-.25*L*L;
 FIGS.c10_prod = {
@@ -115,6 +115,7 @@ ${fig('c10_cost')}
 <p>La curva de <b>costo marginal</b> corta a las curvas de CVMe y CTMe en sus <b>mínimos</b>, por la misma lógica del promedio de notas: si el costo de la última unidad es menor que el promedio, el promedio baja.</p>
 <h3>Relación entre curvas de costo y de producto</h3>
 <p>Son «imágenes especulares»: cuando el producto marginal sube, el costo marginal baja; cuando el PM llega a su máximo, el CM llega a su mínimo; cuando el PMe llega a su máximo, el CVMe llega a su mínimo. Es lógico: si cada trabajador aporta más, producir cada unidad cuesta menos.</p>
+${figAgain('c10_prod')}
 <h3>Qué mueve las curvas de costo</h3>
 <ul>
 <li><b>Tecnología:</b> una mejor técnica aumenta la productividad y desplaza hacia abajo las curvas de costo.</li>
@@ -123,6 +124,7 @@ ${fig('c10_cost')}
 
 <h2>4. Costos a largo plazo</h2>
 <p>A largo plazo todo se puede ajustar. La relación entre los factores y la producción se llama <b>función de producción</b>. Si tienes una planta de cierto tamaño, tu costo medio en el corto plazo es una curva en forma de U. Pero si puedes cambiar el tamaño de planta, para cada nivel de producción elegirías la planta con el costo medio más bajo. La curva que resulta —el <b>costo medio a largo plazo</b>— es la envolvente inferior de todas las curvas de corto plazo.</p>
+${figAgain('c10_cost')}
 ${fig('c10_lr')}
 <h3>Economías y deseconomías de escala</h3>
 <ul>

@@ -2,7 +2,7 @@
 import { FIGS, CHAPTERS } from '../../engine/registry.js';
 import { curve, clamp, bisect } from '../../engine/math.js';
 import { f$, fn, pct } from '../../engine/format.js';
-import { ex, eqn, fig } from '../../engine/blocks.js';
+import { ex, eqn, fig, figAgain } from '../../engine/blocks.js';
 
 FIGS.c17_lab = {
   title:'Demanda de trabajo de una empresa: ¿a cuántos contrata? (ejemplo ilustrativo)',
@@ -68,6 +68,7 @@ html:`
 <h2>1. Los mercados de factores</h2>
 <p>Los factores de producción (trabajo, capital, tierra y capacidad empresarial) se compran y venden en <b>mercados de factores</b>. Sus precios son: <b>salario</b> (trabajo), <b>interés</b> (capital), <b>renta</b> (tierra) y <b>beneficio</b> (capacidad empresarial). Se determinan con oferta y demanda, igual que en los mercados de bienes. Pero ahora los <b>hogares ofrecen</b> y las <b>empresas demandan</b>.</p>
 <p>Una diferencia clave: la demanda de un factor es una <b>demanda derivada</b>: se demanda no por sí misma, sino por lo que permite producir.</p>
+${figAgain('c10_prod')}
 <h2>2. El mercado de trabajo</h2>
 <h3>Demanda de trabajo</h3>
 <p>Una empresa contrata a un trabajador adicional si lo que aporta supera lo que cuesta:</p>
@@ -76,6 +77,7 @@ ${fig('c17_lab')}
 <p>Lo que desplaza la demanda de trabajo: el <b>precio del producto</b>, la <b>productividad</b> (tecnología, capital, educación) y los precios de otros factores.</p>
 <h3>Oferta de trabajo</h3>
 <p>Viene de las decisiones de trabajo y ocio (capítulo 8). Aumenta con el salario (a menos que domine el efecto ingreso) y se desplaza por cambios de población, preferencias y capacidades.</p>
+${figAgain('c8_trab')}
 <h3>Equilibrio</h3>
 <p>El salario de equilibrio iguala la cantidad demandada con la ofrecida. Un aumento de productividad eleva la demanda y sube salarios y empleo; un aumento de la población activa reduce el salario.</p>
 ${fig('c17_mkt')}
@@ -85,6 +87,7 @@ ${fig('c17_mkt')}
 ${ex('Valor presente','<p>Si la tasa de interés es 10% anual, $110 dentro de un año valen hoy $100 ($110 ÷ 1.10). Una inversión que promete $110 en un año solo conviene si cuesta menos de $100.</p>')}
 <h2>4. Tierra y renta económica</h2>
 <p>La tierra (y los recursos naturales) tiene una oferta casi fija. Su precio de mercado lo fija la demanda. Los economistas llaman <b>renta económica</b> a lo que se cobra por encima de lo mínimo necesario para ofrecer el recurso. Un jugador estrella con talento único o un terreno en el centro de la ciudad reciben mucha renta. Para los recursos <b>no renovables</b> (petróleo), el precio refleja también el valor de guardarlo para el futuro.</p>
+${figAgain('c3_eq')}
 ${fig('c17_rent')}
 `,
 terms:[['Demanda derivada','Demanda de un factor por lo que permite producir.'],['Valor del producto marginal','Precio × producto marginal. Es la demanda de trabajo.'],['Capital humano','Conocimientos y habilidades de las personas.'],['Interés','Precio del uso del capital.'],['Valor presente','Valor de hoy de una cantidad que se recibirá en el futuro.'],['Renta económica','Pago por encima del mínimo necesario para ofrecer un factor.']],

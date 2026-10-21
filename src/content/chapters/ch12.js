@@ -2,7 +2,7 @@
 import { FIGS, CHAPTERS } from '../../engine/registry.js';
 import { curve, bisect, interp, smooth } from '../../engine/math.js';
 import { f$, fn } from '../../engine/format.js';
-import { tip, eqn, fig, table } from '../../engine/blocks.js';
+import { tip, eqn, fig, table, figAgain } from '../../engine/blocks.js';
 
 const TC12=[20,21,24,30,40,55]; const tc12=smooth(TC12.map((c,q)=>[q,c]));
 const mc12=interp(TC12.slice(1).map((c,i)=>[i+.5,c-TC12[i]]));
@@ -89,18 +89,21 @@ html:`
 <h2>2. Decisión de producción y precio de un monopolio de precio único</h2>
 <h3>Precio e ingreso marginal</h3>
 <p>Aquí está la idea más importante del capítulo. Para vender más, un monopolio de precio único debe <b>bajar el precio de todas las unidades</b>. Al hacerlo gana por la unidad extra, pero pierde por haber bajado el precio de las anteriores. Por eso su <b>ingreso marginal es menor que el precio</b>.</p>
+${figAgain('c3_dem')}
 <p>Con el ejemplo del libro (Renata, que corta cabello):</p>
 ${table(['Precio ($)','Cantidad','Ingreso total ($)','Ingreso marginal ($)'],[[20,0,0,'—'],[18,1,18,18],[16,2,32,14],[14,3,42,10],[12,4,48,6],[10,5,50,2]])}
 <p>Al pasar de 2 a 3 cortes, el precio baja de $16 a $14. El tercer corte le da $14, pero ahora cobra $2 menos por cada uno de los dos primeros ($4 menos). Ingreso marginal = $14 − $4 = <b>$10</b>, menor que el precio de $14.</p>
 ${eqn('Con demanda lineal P = a − bQ: &nbsp; IM = a − 2bQ','La curva de IM tiene el mismo intercepto y el doble de pendiente.')}
 <h3>Ingreso marginal y elasticidad</h3>
 <p>Cuando la demanda es <b>elástica</b>, bajar el precio aumenta el ingreso total: IM &gt; 0. Cuando es <b>inelástica</b>, bajarlo reduce el ingreso total: IM &lt; 0. Cuando la elasticidad es 1, IM = 0 e ingreso total es máximo. Por eso un monopolio <b>nunca produce donde la demanda es inelástica</b>: allí podría subir el precio, producir menos, ganar más y gastar menos.</p>
+${figAgain('c4_elas')}
 <h3>Decisión de producción y precio</h3>
 <p>El monopolio busca maximizar su beneficio. Sigue los mismos pasos que la empresa competitiva, con <b>IM en lugar de precio</b>:</p>
 <ol>
 <li>Produce donde <b>IM = CM</b>.</li>
 <li>Cobra el <b>precio máximo</b> que logre vender esa cantidad: se lee en la <b>curva de demanda</b>.</li>
 </ol>
+${figAgain('c11_firm')}
 <p>En el ejemplo de Renata: IM = CM en 3 cortes. El precio es $14, el ingreso total $42, el costo total $30 y el beneficio $12.</p>
 ${fig('c12_mono')}
 
@@ -109,8 +112,10 @@ ${fig('c12_mono')}
 <p>Si una industria competitiva se volviera un monopolio (con los mismos costos), la producción <b>disminuiría</b> y el precio <b>aumentaría</b>. La competencia produce donde precio = CM; el monopolio, donde IM = CM, con IM &lt; precio.</p>
 <h3>Eficiencia</h3>
 <p>Con competencia, precio = beneficio marginal = costo marginal: se alcanza la eficiencia. En el monopolio, el beneficio marginal (el precio) <b>excede</b> al costo marginal: algunas unidades que valen más de lo que cuestan no se producen. El triángulo de la figura es la <b>pérdida irrecuperable</b> del monopolio.</p>
+${figAgain('c5_sur')}
 <h3>Redistribución de excedentes</h3>
 <p>El monopolio <b>transfiere</b> excedente de los consumidores al productor: parte del excedente del consumidor se convierte en beneficio del monopolio (un rectángulo), y otra parte se pierde para siempre (el triángulo).</p>
+${figAgain('c12_mono')}
 <h3>Búsqueda de rentas</h3>
 <p>Cualquier actividad para obtener un monopolio exclusivo se llama <b>búsqueda de rentas</b>: contratar abogados y cabilderos, financiar campañas, comprar licencias. Esas actividades usan recursos reales sin producir nada útil. Si hay libre competencia por el monopolio, los costos de la búsqueda pueden igualar al beneficio esperado, y entonces la sociedad pierde <b>tanto la pérdida irrecuperable como el costo de la búsqueda de rentas</b>.</p>
 

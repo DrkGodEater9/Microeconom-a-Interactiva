@@ -7,6 +7,9 @@ export const tip = (h, t = 'Truco para recordarlo') => `<div class="tip"><b>${t}
 export const eqn = (h, small = '') =>
   `<div class="eq">${h}${small ? `<small>${small}</small>` : ''}</div>`;
 export const fig = (n) => `<div class="figmount" data-fig="${n}"></div>`;
+/** Gráfica ya vista antes, plegada: se monta solo si el lector la abre (nota opcional). */
+export const figAgain = (n, note = '') =>
+  `<details class="figref" data-fig="${n}"><summary></summary>${note ? `<p class="figref-note">${note}</p>` : ''}<div class="figref-body"></div></details>`;
 export const table = (head, rows) =>
   `<table class="tb"><thead><tr>${head.map((h) => `<th>${h}</th>`).join('')}</tr></thead><tbody>${rows.map((r) => `<tr>${r.map((c) => `<td>${c}</td>`).join('')}</tr>`).join('')}</tbody></table>`;
 export const K = (c, t) => `<span class="k-${c}">${t}</span>`;

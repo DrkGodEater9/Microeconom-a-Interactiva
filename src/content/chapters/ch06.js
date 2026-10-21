@@ -2,7 +2,7 @@
 import { FIGS, CHAPTERS } from '../../engine/registry.js';
 import { clamp } from '../../engine/math.js';
 import { f$, fn, pct } from '../../engine/format.js';
-import { warn, tip, eqn, fig } from '../../engine/blocks.js';
+import { warn, tip, eqn, fig, figAgain } from '../../engine/blocks.js';
 
 FIGS.c6_rent = {
   title:'Precio tope en los alquileres (ejemplo ilustrativo)',
@@ -91,6 +91,7 @@ learn:['Explicar los efectos de un precio tope (alquileres) y de un precio míni
 html:`
 <h2>1. Mercados de vivienda y precios tope en los alquileres</h2>
 <p>Un <b>precio tope</b> es una regulación que fija un precio <b>máximo</b> legal. Un tope por encima del precio de equilibrio no hace nada. Uno <b>por debajo</b> sí aprieta y tiene efectos fuertes. El caso clásico es el control de alquileres.</p>
+${figAgain('c3_eq','Compara el tope con el precio de equilibrio: si queda por encima, no hace nada.')}
 <h3>Qué pasa a corto y largo plazo</h3>
 <p>Imagina que un terremoto o una migración repentina eleva la demanda y el alquiler sube. El gobierno responde fijando un tope más bajo. A <b>corto plazo</b>, las viviendas que existen ya están ahí (oferta casi vertical): los propietarios pocas opciones tienen, así que el faltante es pequeño. A <b>largo plazo</b>, construir, mantener y alquilar deja de ser rentable: se construyen menos viviendas y las existentes se deterioran. El faltante crece y las ciudades con controles prolongados suelen tener menos oferta y peor calidad.</p>
 ${fig('c6_rent')}
@@ -104,6 +105,7 @@ ${fig('c6_rent')}
 
 <h2>2. El mercado de trabajo y el salario mínimo</h2>
 <p>El <b>salario mínimo</b> es un precio mínimo legal para el trabajo. Es el espejo del precio tope: si queda <b>por encima</b> del salario de equilibrio, la cantidad ofrecida de trabajo supera a la demandada y aparece <b>desempleo</b>.</p>
+${figAgain('c6_rent','Es el espejo del tope de alquileres: mira cómo se ve un precio regulado que se aparta del equilibrio.')}
 ${fig('c6_wage')}
 <p>Lo que ocurre: los trabajadores que conservan su empleo ganan más; otros lo pierden; y el salario alto atrae a nuevos buscadores de empleo, aumentando el desempleo. Es un conflicto entre beneficiarios y perjudicados.</p>
 ${warn('<p>El tamaño del efecto depende de la elasticidad de la demanda de trabajo y de qué tan por encima queda el mínimo. La evidencia empírica es debatida: algunos estudios encuentran efectos pequeños sobre el empleo cuando el mínimo es moderado. Los modelos de este capítulo son la base de ese debate, no la última palabra.</p>','Matiz importante')}
@@ -124,17 +126,21 @@ ${fig('c6_tax')}
 <p>Regla de oro: <i>paga más quien tiene menos alternativas.</i></p>
 <h3>Impuestos y eficiencia</h3>
 <p>Un impuesto reduce la cantidad comerciada. Las transacciones que dejan de ocurrir eran mutuamente beneficiosas: el comprador pagaba menos de lo que valoraba, el vendedor recibía más de lo que costaba. Ese beneficio perdido es la <b>pérdida irrecuperable</b> (o «carga excesiva»). Es el costo oculto de los impuestos. Además, es mayor cuando la oferta y la demanda son más elásticas, y crece con el cuadrado de la tasa del impuesto.</p>
+${figAgain('c5_sur','El triángulo de pérdida irrecuperable es el mismo de la eficiencia.')}
 
 <h2>4. Subsidios y cuotas</h2>
 <h3>Subsidios</h3>
 <p>Un <b>subsidio</b> es un pago del gobierno a los productores. Es como un impuesto negativo: desplaza la oferta hacia abajo, el precio que pagan los compradores baja, el que reciben los vendedores sube y la cantidad aumenta por encima de la eficiente. El subsidio cuesta dinero a los contribuyentes y genera una pérdida irrecuperable por <b>sobreproducción</b>. Úsalo en la figura de arriba llevando el control a valores negativos.</p>
+${figAgain('c6_tax')}
 <h3>Cuotas de producción</h3>
 <p>Una <b>cuota</b> limita la cantidad que se puede producir. Se usa en agricultura para sostener precios. Al restringirse la producción, el precio sube sobre el equilibrio, los vendedores ganan y los consumidores pierden. Es parecida a un monopolio autorizado por la ley.</p>
 <h3>Fluctuaciones de la cosecha</h3>
 <p>Como la demanda de alimentos es inelástica, una cosecha abundante hace caer mucho el precio y el ingreso de los agricultores. Y una cosecha escasa lo sube y el ingreso aumenta. Por eso se crean políticas de apoyo, que tienen un costo para el resto de la sociedad.</p>
+${figAgain('c4_elas')}
 
 <h2>5. Mercados para bienes ilegales</h2>
 <p>¿Qué pasa si se prohíbe una droga? Supongamos que antes de la prohibición existe un mercado libre con su equilibrio. La prohibición aplica sanciones tanto a vendedores como a compradores.</p>
+${figAgain('c3_eq')}
 <ul>
 <li><b>Sanciones a los vendedores</b> elevan el costo de ofrecer la droga (riesgo, sobornos): la <b>oferta disminuye</b>.</li>
 <li><b>Sanciones a los compradores</b> reducen su disposición a pagar: la <b>demanda disminuye</b>.</li>

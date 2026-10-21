@@ -2,7 +2,7 @@
 import { FIGS, CHAPTERS } from '../../engine/registry.js';
 import { curve, bisect, smooth } from '../../engine/math.js';
 import { f$, fn } from '../../engine/format.js';
-import { def, ex, warn, tip, eqn, fig, table } from '../../engine/blocks.js';
+import { def, ex, warn, tip, eqn, fig, table, figAgain } from '../../engine/blocks.js';
 
 const DEMP=[[0,12.5],[0.5,9],[1,6],[1.5,4],[2,3],[2.5,2],[3,1.2],[4,0.2]];  // P -> Q demandada (CD-R, libro)
 const SUPP=[[0.5,0],[1,3],[1.5,4],[2,5],[2.5,6],[3,7],[4,9]];         // P -> Q ofrecida (CD-R, libro)
@@ -96,6 +96,7 @@ ${table(['Punto','Precio ($ por CD-R)','Cantidad demandada (M por semana)'],[['A
 ${fig('c3_dem')}
 <h3>Cambio en la cantidad demandada vs. cambio en la demanda</h3>
 ${warn('<p>Éste es el error más frecuente de todo el curso. <b>Un cambio en el precio del bien</b> mueve el punto <i>a lo largo</i> de la misma curva: es un <b>cambio en la cantidad demandada</b>. <b>Un cambio en cualquier otro factor</b> desplaza la <i>curva entera</i>: es un <b>cambio en la demanda</b>.</p>')}
+${figAgain('c3_dem')}
 <h3>Seis factores que desplazan la demanda</h3>
 <ol>
 <li><b>Precios de bienes relacionados.</b> <i>Sustitutos</i> (pueden usarse en lugar del bien: té y café): si el sustituto se encarece, aumenta la demanda de tu bien. <i>Complementos</i> (se usan juntos: CD-R y quemadores): si el complemento se abarata, aumenta la demanda de tu bien.</li>
@@ -141,6 +142,7 @@ ${fig('c3_eq')}
 <li>¿Hacia dónde se mueve: a la derecha (aumento) o a la izquierda (disminución)?</li>
 <li>Lee el nuevo punto de cruce comparado con el viejo.</li>
 </ol>
+${figAgain('c3_eq','Úsala para dibujar cada caso: mueve la curva y mira el nuevo cruce.')}
 ${table(['Qué ocurre','Precio de equilibrio','Cantidad de equilibrio'],[['Aumenta la demanda','Sube','Aumenta'],['Disminuye la demanda','Baja','Disminuye'],['Aumenta la oferta','Baja','Aumenta'],['Disminuye la oferta','Sube','Disminuye']])}
 ${ex('Ejemplo real: el precio del petróleo','<p>Si China crece rápido, sus fábricas y autos necesitan más petróleo: <b>aumenta la demanda mundial</b>. La curva de demanda se desplaza a la derecha; con una oferta que no se ajusta tan rápido, el precio sube y se produce más. Si además hay conflictos que interrumpen la extracción, la oferta disminuye y el precio sube aún más (pero la cantidad puede quedar casi igual).</p>')}
 <h3>Cuando cambian ambas curvas</h3>

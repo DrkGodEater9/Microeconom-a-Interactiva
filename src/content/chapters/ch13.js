@@ -2,7 +2,7 @@
 import { FIGS, CHAPTERS } from '../../engine/registry.js';
 import { curve } from '../../engine/math.js';
 import { f$, fn } from '../../engine/format.js';
-import { def, warn, fig } from '../../engine/blocks.js';
+import { def, warn, fig, figAgain } from '../../engine/blocks.js';
 
 const F13=30, aLR13=2+Math.sqrt(180);
 FIGS.c13_mc = {
@@ -88,6 +88,7 @@ html:`
 <p>Ejemplos: restaurantes, peluquerías, ropa, pasta de dientes. Al ser el producto diferenciado, cada empresa tiene algo de <b>poder de mercado</b> (como un pequeño monopolio sobre su propia variedad), pero compite con muchas empresas parecidas.</p>
 <h3>Precio y producción</h3>
 <p>Cada empresa enfrenta una demanda con pendiente negativa. Decide cantidad y precio como un monopolio: produce donde <b>IM = CM</b> y cobra el precio de su curva de demanda.</p>
+${figAgain('c12_mono','Decide igual que un monopolio: IM = CM y el precio sale de la demanda.')}
 <ul>
 <li><b>Corto plazo:</b> puede ganar beneficio económico.</li>
 <li><b>Largo plazo:</b> como no hay barreras, el beneficio atrae a nuevos competidores con productos parecidos. La demanda de cada empresa baja (se desplaza hacia la izquierda y se vuelve más elástica) hasta que el beneficio económico es cero: la curva de demanda es <b>tangente</b> a la curva de costo total medio.</li>
@@ -99,6 +100,7 @@ ${fig('c13_mc')}
 <li><b>El precio es mayor que el costo marginal</b>: hay un margen sobre el costo, lo que genera una pequeña pérdida irrecuperable.</li>
 <li><b>Capacidad ociosa:</b> cada empresa produce menos de la escala eficiente (donde el CTMe es mínimo).</li>
 </ul>
+${figAgain('c5_sur')}
 <p>Pero hay algo a favor: la <b>variedad</b>. Los consumidores valoran poder elegir entre muchas marcas, y ese valor compensa, al menos en parte, la ineficiencia. Además, el costo de la capacidad ociosa es una «cuota» por esa variedad.</p>
 <h3>Desarrollo del producto y marketing</h3>
 <p>Como el beneficio de corto plazo desaparece por la entrada de rivales, las empresas compiten con <b>innovación</b> (nuevos productos y mejoras) para mantenerse delante. Esa innovación es valiosa, pero tiene costos. También usan <b>publicidad</b>: puede aumentar los costos y los precios, pero también <b>informa</b>, ayuda a comparar y funciona como <b>señal de calidad</b> (una marca conocida tiene mucho que perder si baja la calidad). La publicidad también puede hacer más inelástica la demanda y crear lealtad a la marca.</p>
@@ -117,6 +119,7 @@ ${fig('c13_kink')}
 <p>Pero el modelo tiene una debilidad: <b>no explica cómo se llegó al precio inicial</b>, y la evidencia de que los precios no cambian es discutida.</p>
 <h3>Oligopolio de empresa dominante</h3>
 <p>Una empresa grande (la dominante) fija el precio y las demás, pequeñas, lo toman como dado (como en competencia perfecta). La dominante calcula su demanda restando de la demanda del mercado lo que ofrecen las pequeñas, y produce donde IM = CM de esa demanda residual.</p>
+${figAgain('c11_firm')}
 
 <h2>3. Juegos de oligopolio</h2>
 <p>La <b>teoría de juegos</b> estudia cómo se comportan los individuos que toman decisiones estratégicas: decisiones en las que el resultado de cada uno depende de lo que hagan los demás. Es la herramienta natural del oligopolio. Un juego tiene: <b>jugadores</b>, <b>estrategias</b> (opciones) y <b>pagos</b> (resultados de cada combinación).</p>
@@ -125,6 +128,7 @@ ${fig('c13_kink')}
 ${def('Equilibrio de Nash','<p>Es la situación en la que <b>cada jugador hace lo mejor que puede dado lo que hace el otro</b>: nadie quiere cambiar su estrategia mientras los demás mantengan las suyas. Lleva el nombre del matemático John Nash.</p>')}
 <h3>Un juego de oligopolio para la fijación de precios</h3>
 <p>Dos empresas (un duopolio) pueden formar un <b>cártel</b> y fijar un precio alto (como un monopolio) o competir. Si cooperan, comparten el beneficio de monopolio. Pero cada una gana más si rompe el acuerdo mientras la otra lo cumple. Como las dos piensan igual, ambas rompen y el resultado es la <b>guerra de precios</b>: el mismo equilibrio de Nash, con precios cercanos a competencia y beneficios bajos.</p>
+${figAgain('c12_mono','El cártel busca replicar este resultado de monopolio.')}
 ${fig('c13_game')}
 <h3>Otros juegos de oligopolio</h3>
 <ul>

@@ -2,7 +2,7 @@
 import { FIGS, CHAPTERS } from '../../engine/registry.js';
 import { linspace, curve, clamp } from '../../engine/math.js';
 import { f$, fn } from '../../engine/format.js';
-import { def, warn, tip, eqn, fig } from '../../engine/blocks.js';
+import { def, warn, tip, eqn, fig, figAgain } from '../../engine/blocks.js';
 
 FIGS.c7_ut = {
   title:'Utilidad total y utilidad marginal (ejemplo ilustrativo)',
@@ -102,6 +102,7 @@ ${warn('<p>La utilidad total puede estar subiendo y la marginal bajando <i>al mi
 <li><b>Gastar todo el ingreso</b> (si no, estarías dejando satisfacción sin usar).</li>
 <li><b>Igualar la utilidad marginal por dólar gastado</b> en todos los bienes.</li>
 </ol>
+${figAgain('c7_ut')}
 ${eqn('UM de películas ÷ precio de películas = UM de hamburguesas ÷ precio de hamburguesas','Cada dólar adicional debe rendir lo mismo en todos los usos.')}
 <h3>¿Por qué esa regla?</h3>
 <p>Supón que un dólar adicional en películas te da 6 útiles y en hamburguesas 3. Entonces te conviene gastar un dólar menos en hamburguesas (pierdes 3) y uno más en películas (ganas 6): ganas 3 útiles. Mientras exista una diferencia, puedes mejorar moviendo dinero. Cuando se igualan, ya no hay mejora posible: ése es el máximo.</p>
@@ -118,9 +119,11 @@ ${fig('c7_eq')}
 ${fig('c7_dem')}
 <h3>Utilidad marginal y elasticidad</h3>
 <p>Si la utilidad marginal de un bien cae rápido a medida que consumes más, la demanda será <b>inelástica</b>: un precio menor no te anima a comprar mucho más. Si la UM cae lentamente (como cuando los sustitutos son buenos), la demanda será elástica.</p>
+${figAgain('c4_cte')}
 
 <h2>3. Eficiencia, precio y valor</h2>
 <p>La curva de demanda es a la vez el beneficio marginal (capítulo 5). Un consumidor es eficiente cuando iguala su UM por dólar entre bienes. Y el <b>excedente del consumidor</b> es la diferencia entre lo que estaría dispuesto a pagar (la utilidad de cada unidad, en dinero) y lo que paga.</p>
+${figAgain('c7_dem')}
 <h3>La paradoja del valor</h3>
 <p>El agua es indispensable para vivir y cuesta casi nada; los diamantes no sirven para nada vital y cuestan muchísimo. ¿Por qué? Porque confundimos <b>utilidad total</b> con <b>utilidad marginal</b>.</p>
 <ul>

@@ -1,6 +1,7 @@
 import { CHAPTERS } from '../engine/registry.js';
 import { PARTS } from './parts.js';
 import { $ } from './dom.js';
+import { safeGet, safeSet } from './storage.js';
 
 /** Dibuja el índice lateral marcando el capítulo activo (null = inicio). */
 export function renderNav(activeId) {
@@ -16,12 +17,36 @@ export function renderNav(activeId) {
   $('#side').innerHTML = html;
 }
 
-/** Comportamiento del menú desplegable en pantallas pequeñas. */
+const KEY = 'micro-nav-collapsed';
+const mobile = () => window.innerWidth <= 900;
+
+/** Menú desplegable en pantallas pequeñas y barra contraíble en escritorio. */
 export function initNav() {
-  const close = () => document.body.classList.remove('nav-open');
-  $('#menuBtn').addEventListener('click', () => document.body.classList.toggle('nav-open'));
+  const body = document.body;
+  const btn = $('#menuBtn');
+  const sync = () => {
+    const open = mobile()
+      ? body.classList.contains('nav-open')
+      : !body.classList.contains('nav-collapsed');
+    btn.setAttribute('aria-expanded', String(open));
+  };
+  const close = () => {
+    body.classList.remove('nav-open');
+    sync();
+  };
+  if (safeGet(KEY) === '1') body.classList.add('nav-collapsed');
+  btn.addEventListener('click', () => {
+    if (mobile()) body.classList.toggle('nav-open');
+    else {
+      body.classList.toggle('nav-collapsed');
+      safeSet(KEY, body.classList.contains('nav-collapsed') ? '1' : '0');
+    }
+    sync();
+  });
   $('#scrim').addEventListener('click', close);
   $('#side').addEventListener('click', (event) => {
     if (event.target.closest('a')) close();
   });
+  window.addEventListener('resize', sync);
+  sync();
 }

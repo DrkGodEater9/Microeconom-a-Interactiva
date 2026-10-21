@@ -2,7 +2,7 @@
 import { FIGS, CHAPTERS } from '../../engine/registry.js';
 import { curve, smooth } from '../../engine/math.js';
 import { fn } from '../../engine/format.js';
-import { def, warn, tip, eqn, fig, table } from '../../engine/blocks.js';
+import { def, warn, tip, eqn, fig, table, figAgain } from '../../engine/blocks.js';
 
 const FPPpts=[[0,15],[1,14],[2,12],[3,9],[4,5],[5,0]]; // hamburguesas (x), CD (y): datos del libro
 const fppF=smooth(FPPpts);
@@ -135,11 +135,13 @@ ${warn('<p>La frontera no dice cuánto <i>se produce</i>, sino cuánto <i>se pod
 <li><b>Costo marginal (CM):</b> el costo de oportunidad de producir una unidad más. Se mide en la FPP y aumenta conforme producimos más de ese bien.</li>
 <li><b>Beneficio marginal (BM):</b> cuánto valoramos una unidad más, medido en lo que estamos dispuestos a entregar a cambio. Disminuye conforme tenemos más (principio del beneficio marginal decreciente).</li>
 </ul>
+${figAgain('c2_fpp','El costo marginal se lee en la frontera: cada unidad extra cuesta más unidades del otro bien.')}
 ${fig('c2_efi')}
 <p>La regla de oro: se usa eficientemente los recursos cuando el <b>beneficio marginal iguala al costo marginal</b>. Si BM &gt; CM, conviene producir más; si BM &lt; CM, conviene producir menos.</p>
 
 <h2>3. Crecimiento económico</h2>
 <p>Cuando aumenta la capacidad productiva —más capital, más educación, mejor tecnología— la FPP se desplaza hacia afuera. Eso es el <b>crecimiento económico</b>. Actívalo en la primera figura del capítulo para verlo. Pero hay un costo: para invertir en capital o educación hoy hay que sacrificar consumo hoy. Por eso los países que invierten más crecen más rápido, pero consumen menos al principio. El libro compara a México y Corea del Sur: Corea sacrificó más consumo presente para invertir y creció mucho más.</p>
+${figAgain('c2_fpp')}
 
 <h2>4. Ganancias del comercio</h2>
 <p>¿Por qué la gente no produce todo lo que necesita? Porque comerciar nos hace más ricos a todos. La explicación está en la <b>ventaja comparativa</b>.</p>

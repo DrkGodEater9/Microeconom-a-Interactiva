@@ -2,7 +2,7 @@
 import { FIGS, CHAPTERS } from '../../engine/registry.js';
 import { curve, bisect, interp, smooth } from '../../engine/math.js';
 import { f$, fn } from '../../engine/format.js';
-import { warn, eqn, fig } from '../../engine/blocks.js';
+import { warn, eqn, fig, figAgain } from '../../engine/blocks.js';
 
 const TC11=[22,45,66,85,100,114,126,141,160,183,210,245,300,360];
 const tcS=smooth(TC11.map((c,q)=>[q,c]));
@@ -89,6 +89,7 @@ ${eqn('Ingreso total = precio × cantidad &nbsp;&nbsp; Ingreso marginal (IM) = �
 <li>Si <b>IM &lt; CM</b>, esa unidad cuesta más de lo que da: conviene producir menos.</li>
 <li>El beneficio es máximo cuando <b>IM = CM</b>, es decir, <b>precio = CM</b>.</li>
 </ul>
+${figAgain('c10_cost','El costo marginal que ves aquí es la curva que compararás con el precio.')}
 <p>El libro usa una fábrica de camisas con $25 como precio de mercado. Su costo total es $22 con cero producción, y la producción óptima es 9 camisas, donde el beneficio es máximo ($42). Si produce 4 o 12, el beneficio es cero (punto de equilibrio).</p>
 ${fig('c11_firm')}
 <h3>Beneficios y pérdidas en el corto plazo</h3>
@@ -105,6 +106,7 @@ ${warn('<p>Cerrar «temporalmente» no es lo mismo que salir de la industria. Si
 
 <h2>3. Producción, precio y beneficios en competencia perfecta</h2>
 <p>Con la oferta de la industria y la demanda del mercado se determina el precio. Si el precio sube, las empresas se anticipan con beneficios; si cae, con pérdidas. En el <b>corto plazo</b>, el número de empresas es fijo.</p>
+${figAgain('c3_eq')}
 <h3>Ajustes a largo plazo: entrada y salida</h3>
 <p>Con libre entrada y salida:</p>
 <ul>
@@ -125,6 +127,7 @@ ${fig('c11_mkt')}
 <li>Por lo tanto, <b>BM = CM</b>: no hay pérdida irrecuperable.</li>
 <li>Además, la producción se hace al <b>costo medio mínimo</b> (eficiencia productiva).</li>
 </ul>
+${figAgain('c5_sur')}
 <p>Éste es el mejor argumento a favor de los mercados competitivos. Como los siguientes capítulos muestran, cuando la competencia falla (monopolio, oligopolio, externalidades) este resultado ya no se garantiza.</p>
 `,
 terms:[['Competencia perfecta','Muchas empresas, producto idéntico, libre entrada y salida.'],['Tomador de precios','Empresa que no puede influir en el precio de mercado.'],['Ingreso marginal','Ingreso adicional por una unidad más. En competencia perfecta = precio.'],['Producción que maximiza el beneficio','Cantidad donde IM = CM.'],['Punto de equilibrio','Precio igual al mínimo del CTMe: beneficio económico cero.'],['Punto de cierre','Precio igual al mínimo del CVMe: debajo conviene cerrar.'],['Entrada y salida','Las empresas entran si hay beneficios y salen si hay pérdidas.'],['Equilibrio de largo plazo','Precio = mínimo del CTMe; beneficio económico cero.'],['Economías externas','Al crecer la industria bajan los costos de todas las empresas.']],

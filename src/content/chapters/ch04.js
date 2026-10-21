@@ -2,7 +2,7 @@
 import { FIGS, CHAPTERS } from '../../engine/registry.js';
 import { linspace, curve } from '../../engine/math.js';
 import { f$, fn } from '../../engine/format.js';
-import { def, ex, warn, eqn, fig, table } from '../../engine/blocks.js';
+import { def, ex, warn, eqn, fig, table, figAgain } from '../../engine/blocks.js';
 
 const D4=Q=>25-.5*Q;   // demanda lineal de pizzas: pasa por (10,20) -> elasticidad 4 (libro)
 FIGS.c4_elas = {
@@ -88,6 +88,7 @@ learn:['Definir la elasticidad precio de la demanda y calcularla con el método 
 html:`
 <h2>1. La elasticidad precio de la demanda</h2>
 <p>La ley de la demanda dice que si el precio sube, la cantidad demandada baja. Pero no dice <b>cuánto</b> baja. Esa es la gran pregunta: ¿un alza de 10% en el precio hace caer la cantidad 2%, o 30%? La respuesta es muy distinta para la sal que para los viajes de vacaciones.</p>
+${figAgain('c3_dem')}
 <p>Una primera idea sería medir la pendiente de la curva. Pero la pendiente depende de las unidades: si mides el precio en dólares o centavos, cambia. Los economistas usan algo mejor: comparan cambios <b>en porcentajes</b>, que no dependen de las unidades.</p>
 ${def('Elasticidad precio de la demanda','<p>Es una medida, sin unidades, de la sensibilidad de la cantidad demandada a un cambio en el precio, con todo lo demás constante.</p>')}
 ${eqn('Elasticidad = cambio porcentual de la cantidad demandada ÷ cambio porcentual del precio','Se reporta en valor absoluto (sin el signo negativo) porque el precio y la cantidad se mueven en sentidos opuestos.')}
@@ -143,7 +144,9 @@ ${eqn('Elasticidad de la oferta = % cambio de la cantidad ofrecida ÷ % cambio d
 <li><b>Posibilidad de sustituir recursos.</b> Los bienes que se producen con recursos de uso común (camisetas) tienen oferta elástica; los que requieren recursos únicos (vino de una región, pinturas de un artista) la tienen inelástica.</li>
 <li><b>Tiempo desde el cambio de precio.</b> Con el tiempo, la oferta es más elástica: el productor puede construir más fábricas o plantar más árboles. Se distinguen tres plazos: <i>instantáneo</i> (oferta inelástica, no puedes producir más ya), <i>corto plazo</i> (ajusta algo, ej. más horas de trabajo) y <i>largo plazo</i> (puede cambiar todo, incluido el capital).</li>
 </ul>
+${figAgain('c3_ofe')}
 <p>Cambia a «Oferta» en la figura de curvas (arriba) para ver cómo se ve una oferta elástica e inelástica.</p>
+${figAgain('c4_cte')}
 `,
 terms:[['Elasticidad precio de la demanda','% cambio de la cantidad demandada ÷ % cambio del precio. Mide la sensibilidad de los compradores.'],['Método del punto medio','Usa promedios como base de los cambios porcentuales para que el resultado sea igual subiendo o bajando el precio.'],['Demanda elástica','Elasticidad mayor que 1: la cantidad reacciona más que proporcionalmente al precio.'],['Demanda inelástica','Elasticidad menor que 1: la cantidad reacciona menos que proporcionalmente.'],['Elasticidad unitaria','Elasticidad igual a 1.'],['Ingreso total','Precio × cantidad.'],['Elasticidad cruzada','Respuesta de la cantidad de un bien al precio de otro. Positiva: sustitutos; negativa: complementos.'],['Elasticidad ingreso','Respuesta de la cantidad al ingreso. &gt;1 lujo; 0–1 normal; &lt;0 inferior.'],['Elasticidad de la oferta','% cambio de la cantidad ofrecida ÷ % cambio del precio.']],
 quiz:[

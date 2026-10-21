@@ -2,7 +2,7 @@
 import { FIGS, CHAPTERS } from '../../engine/registry.js';
 import { curve } from '../../engine/math.js';
 import { f$, fn } from '../../engine/format.js';
-import { warn, fig } from '../../engine/blocks.js';
+import { warn, fig, figAgain } from '../../engine/blocks.js';
 
 FIGS.c14_nat = {
   title:'Regulación de un monopolio natural (ejemplo ilustrativo)',
@@ -64,6 +64,7 @@ html:`
 
 <h2>2. Regulación de monopolio y oligopolio</h2>
 <p>La <b>regulación</b> es un conjunto de reglas administradas por un organismo gubernamental que controlan precios, cantidades, entrada y calidad en una industria. Tiene dos teorías (la del interés público y la de la captura) y se puede evaluar con una pregunta: <i>¿los precios y la cantidad regulados se parecen a los de un mercado competitivo o a los de un monopolio?</i></p>
+${figAgain('c12_mono')}
 <h3>El monopolio natural</h3>
 <p>Un monopolio natural tiene economías de escala tan grandes que una sola empresa abastece el mercado a un costo menor que varias. Sin regulación, cobraría precios altos. Tres opciones:</p>
 <ul>
@@ -71,6 +72,7 @@ html:`
 <li><b>Precio = costo medio</b> (regulación de la tasa de rendimiento): la empresa obtiene beneficio normal. Pero hay una pequeña pérdida irrecuperable, y como se le reembolsan los costos, tiene <b>poca presión para reducirlos</b>. Se infla el costo.</li>
 <li><b>Precios máximos (price cap):</b> se fija un tope al precio que puede subir cada año (ajustado por inflación menos una meta de productividad). Da incentivo a reducir costos, porque la empresa se queda con las ganancias de eficiencia.</li>
 </ul>
+${figAgain('c10_lr')}
 ${fig('c14_nat')}
 <h3>Regulación de cárteles</h3>
 <p>A veces la regulación ayuda a que las empresas actúen como cártel: fija precios que benefician a la industria (taxis con licencias, aerolíneas reguladas antes de la desregulación). La teoría de la captura predice que la regulación puede ser <b>un cártel con apoyo del gobierno</b>. La evidencia de muchos países es que la <b>desregulación</b> (aerolíneas, transporte, telecomunicaciones) redujo precios, aunque también trajo ajustes difíciles.</p>
@@ -87,6 +89,7 @@ ${warn('<p>Tanto la teoría del interés público como la de la captura explican
 </ul>
 <h3>Fusiones</h3>
 <p>Las autoridades usan el <b>índice Herfindahl-Hirschman (IHH)</b> como un primer filtro: un mercado con IHH menor a 1,000 se considera competitivo, y a partir de ciertos niveles revisan con más cuidado las fusiones que aumentan mucho el IHH. La fusión de dos empresas con participaciones <i>a</i> y <i>b</i> sube el IHH en <b>2ab</b>.</p>
+${figAgain('c9_hhi')}
 ${fig('c14_merge')}
 <h3>En México y en el mundo</h3>
 <p>El libro describe la creación de la <b>Comisión Federal de Competencia (CFC)</b> y la Ley Federal de Competencia Económica de 1992, que regula las <b>prácticas monopólicas</b> (absolutas y relativas) y las <b>fusiones</b>. Menciona casos como el de Estados Unidos contra Microsoft (venta atada del navegador) y casos mexicanos de precedente. <i>(Nota fuera del libro: en 2014 la CFC fue sustituida por la Comisión Federal de Competencia Económica, COFECE, y las telecomunicaciones pasaron a otro regulador.)</i></p>

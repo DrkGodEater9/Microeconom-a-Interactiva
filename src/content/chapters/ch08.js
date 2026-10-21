@@ -2,7 +2,7 @@
 import { FIGS, CHAPTERS } from '../../engine/registry.js';
 import { curve } from '../../engine/math.js';
 import { f$, fn, pct } from '../../engine/format.js';
-import { def, eqn, fig } from '../../engine/blocks.js';
+import { def, eqn, fig, figAgain } from '../../engine/blocks.js';
 
 FIGS.c8_budget = {
   title:'Restricción presupuestaria (ejemplo del libro: ingreso $30, película $6, hamburguesa $3)',
@@ -122,6 +122,7 @@ ${fig('c8_forma')}
 
 <h2>3. Predicción del comportamiento del consumidor</h2>
 <p>Ahora junta las dos piezas: la restricción presupuestaria y el mapa de indiferencia. El consumidor elige el punto alcanzable con mayor satisfacción: aquel donde la línea de presupuesto <b>toca justo</b> una curva de indiferencia sin cruzarla. En ese punto de tangencia:</p>
+${figAgain('c8_budget')}
 ${eqn('TMS = precio relativo','Lo que estás dispuesto a cambiar = lo que el mercado te permite cambiar.')}
 <p>Si la TMS fuera mayor que el precio relativo, valorarías el bien x más de lo que cuesta: comprarías más. Si fuera menor, comprarías menos. El óptimo se alcanza cuando se igualan (y es el mismo resultado que «UM/precio igual», del capítulo 7).</p>
 ${fig('c8_ic')}
@@ -143,11 +144,13 @@ ${fig('c8_ic')}
 <li><b>Efecto sustitución:</b> el ocio se encarece, así que trabajas más.</li>
 <li><b>Efecto ingreso:</b> eres más rico, así que compras más ocio y trabajas menos.</li>
 </ul>
+${figAgain('c8_ic')}
 <p>A salarios bajos domina el efecto sustitución (la oferta de trabajo sube). A salarios muy altos puede dominar el efecto ingreso (la oferta se «dobla hacia atrás»). Esto se ve en las horas de trabajo de los países ricos: han bajado con el tiempo a pesar del aumento de los salarios.</p>
 ${fig('c8_trab')}
 
 <h2>Apéndice: utilidad marginal y curvas de indiferencia</h2>
 <p>Las dos teorías (capítulo 7 y 8) dan exactamente la misma respuesta. La TMS es el cociente entre las utilidades marginales: <b>TMS = UM<sub>x</sub> ÷ UM<sub>y</sub></b>. Como en el óptimo TMS = P<sub>x</sub>/P<sub>y</sub>, se cumple que <b>UM<sub>x</sub>/P<sub>x</sub> = UM<sub>y</sub>/P<sub>y</sub></b>. Son dos formas de expresar la misma idea: con curvas de indiferencia no hace falta medir la utilidad en números, sólo ordenar las preferencias.</p>
+${figAgain('c7_eq')}
 `,
 terms:[['Restricción presupuestaria','Límite de lo que se puede comprar con el ingreso y los precios dados.'],['Precio relativo','Cociente de dos precios: el costo de oportunidad de un bien medido en el otro. Pendiente de la restricción.'],['Curva de indiferencia','Combinaciones que dan igual satisfacción.'],['Tasa marginal de sustitución','Cuánto del bien y se renuncia por una unidad más del x, sin cambiar la satisfacción. Pendiente de la curva.'],['Efecto sustitución','Cambio en el consumo por el cambio del precio relativo.'],['Efecto ingreso','Cambio en el consumo por el cambio del poder adquisitivo.'],['Bien normal / inferior','Normal: se compra más con más ingreso. Inferior: menos.'],['Oferta de trabajo','Horas que la gente quiere trabajar a cada salario.']],
 quiz:[

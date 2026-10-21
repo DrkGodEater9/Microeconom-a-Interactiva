@@ -1,7 +1,7 @@
 /** Capítulo 5 */
 import { FIGS, CHAPTERS } from '../../engine/registry.js';
 import { f$, fn } from '../../engine/format.js';
-import { def, warn, fig } from '../../engine/blocks.js';
+import { def, warn, fig, figAgain } from '../../engine/blocks.js';
 
 FIGS.c5_unit = {
   title:'Excedente del consumidor y del productor, unidad por unidad',
@@ -60,13 +60,16 @@ html:`
 <li><b>Beneficio marginal (BM)</b> de un bien: lo que está dispuesto a pagar un consumidor por una unidad más. Se lee en la <b>curva de demanda</b>.</li>
 <li><b>Costo marginal (CM)</b>: el costo de oportunidad de producir una unidad más. Se lee en la <b>curva de oferta</b>.</li>
 </ul>
+${figAgain('c3_eq','El beneficio marginal es la curva de demanda y el costo marginal es la de oferta; se cruzan en la cantidad eficiente.')}
 <p>Una asignación de recursos es <b>eficiente</b> cuando no se puede mejorar a una persona sin empeorar a otra. En un solo mercado, es la cantidad en la que BM = CM. Si BM &gt; CM, producir una unidad más aumenta el bienestar; si BM &lt; CM, esa unidad le quita más a la sociedad de lo que da.</p>
 
 <h2>2. Valor, precio y excedente del consumidor</h2>
 <p>Valor y precio no son lo mismo. El <b>valor</b> es cuánto estás dispuesto a pagar por algo (su beneficio marginal). El <b>precio</b> es lo que realmente pagas. Casi siempre el valor supera al precio de lo que compras: ésa es la ganancia. Imagina que estarías dispuesto a pagar $16 por la primera unidad de algo, pero el precio es $9: obtuviste una ganancia de $7. A esa ganancia se la llama <b>excedente del consumidor</b>.</p>
 ${def('Excedente del consumidor','<p>Es la <b>suma</b>, sobre todas las unidades que compras, de la diferencia entre lo que estarías dispuesto a pagar y lo que realmente pagas. En la gráfica es el <b>área bajo la curva de demanda y sobre el precio</b>.</p>')}
+${figAgain('c3_dem','El excedente es el área bajo esta curva y sobre el precio que pagas.')}
 <h2>3. Costo, precio y excedente del productor</h2>
 <p>Igual del lado de los vendedores. El <b>costo</b> es lo que cuesta producir (el mínimo al que alguien aceptaría vender). El <b>excedente del productor</b> es la diferencia entre el precio que recibe y ese mínimo, sumada sobre todas las unidades vendidas. En la gráfica es el <b>área sobre la curva de oferta y bajo el precio</b>.</p>
+${figAgain('c3_ofe','El excedente del productor es el área sobre esta curva y bajo el precio.')}
 ${fig('c5_unit')}
 <h2>4. ¿Es eficiente el mercado competitivo?</h2>
 <p>Pongamos los dos excedentes juntos. En el equilibrio de un mercado competitivo, <b>el excedente total (EC + EP) es el máximo posible</b>. Por eso decimos que el mercado competitivo es eficiente: produce justo las unidades cuyo beneficio supera o iguala su costo, y no produce las demás.</p>
@@ -84,6 +87,7 @@ ${fig('c5_sur')}
 <li><b>Altos costos de transacción</b>.</li>
 </ul>
 
+${figAgain('c5_sur')}
 <h2>5. ¿Es justo el mercado competitivo?</h2>
 <p>Un resultado puede ser eficiente sin ser justo. Un mercado puede producir al máximo y aun así dejar a alguien con muy poco. Los economistas distinguen dos grandes enfoques sobre la <b>equidad</b> (justicia):</p>
 <h3>Primer enfoque: es justo si el resultado es justo («todos reciben lo que merecen»)</h3>

@@ -1,7 +1,7 @@
 /** Capítulo 15 */
 import { FIGS, CHAPTERS } from '../../engine/registry.js';
 import { f$, fn } from '../../engine/format.js';
-import { def, tip, eqn, fig, table } from '../../engine/blocks.js';
+import { def, tip, eqn, fig, table, figAgain } from '../../engine/blocks.js';
 
 FIGS.c15_neg = {
   title:'Externalidad negativa: la contaminación (ejemplo ilustrativo)',
@@ -82,6 +82,7 @@ html:`
 <p>Una <b>externalidad</b> es un costo o beneficio que recae sobre alguien que <b>no participó</b> en la transacción. Hay cuatro tipos:</p>
 ${table(['','Negativa (costo para otros)','Positiva (beneficio para otros)'],[['De producción','Una fábrica contamina un río. Una planta de energía emite humo.','Una empresa de investigación crea conocimiento que otros copian. Un apicultor poliniza los árboles de su vecino.'],['De consumo','Fumar cerca de otros. Escuchar música a todo volumen.','Vacunarse protege también a los demás. Embellecer tu casa mejora el barrio.']])}
 <p>Como el que decide solo mira su propio costo y beneficio, <b>ignora</b> el efecto sobre los demás, y el mercado produce una cantidad que no es eficiente.</p>
+${figAgain('c3_eq')}
 
 <h2>2. Externalidades negativas: la contaminación</h2>
 <p>La contaminación es la externalidad negativa clásica. Su demanda no es «cuánta contaminación queremos», sino «cuánto aire limpio estamos dispuestos a pagar». Las fuentes pueden ser fábricas, autos, plantas eléctricas. Para analizar necesitamos dos conceptos:</p>
@@ -104,11 +105,13 @@ ${fig('c15_coase')}
 <li><b>Regulaciones directas:</b> fijar límites o tecnologías obligatorias. Sencillas, pero menos flexibles y a menudo más costosas.</li>
 </ul>
 <p>Cuando los tomadores de decisiones están bien informados, impuestos y permisos son eficientes. En la práctica, medir el costo externo es difícil.</p>
+${figAgain('c6_tax')}
 
 <h2>3. Externalidades positivas: el conocimiento</h2>
 <p>Cuando alguien adquiere conocimiento, además de beneficiarse él, beneficia a otros: las empresas se aprovechan de personas más preparadas, las ideas se difunden. Aquí hay un <b>beneficio marginal externo</b>.</p>
 ${eqn('Beneficio marginal social = beneficio marginal privado + beneficio marginal externo')}
 <p>Como el individuo solo ve su beneficio privado, <b>compra de menos</b>. La cantidad eficiente (donde BMS = CM) es mayor que la del mercado.</p>
+${figAgain('c15_neg','Es el espejo de la externalidad negativa.')}
 ${fig('c15_pos')}
 <h3>Acciones gubernamentales ante los beneficios externos</h3>
 <ul>

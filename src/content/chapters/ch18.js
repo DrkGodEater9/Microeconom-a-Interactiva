@@ -2,7 +2,7 @@
 import { FIGS, CHAPTERS } from '../../engine/registry.js';
 import { curve, bisect } from '../../engine/math.js';
 import { fn, pct } from '../../engine/format.js';
-import { def, warn, fig } from '../../engine/blocks.js';
+import { def, warn, fig, figAgain } from '../../engine/blocks.js';
 
 FIGS.c18_lorenz = {
   title:'Curva de Lorenz y coeficiente de Gini',
@@ -37,6 +37,7 @@ ${fig('c18_lorenz')}
 <h3>Ingreso y riqueza</h3>
 <p>El <b>ingreso</b> es lo que se recibe por periodo; la <b>riqueza</b> es lo que se posee (casas, ahorros, acciones). La riqueza suele estar <b>más concentrada</b> que el ingreso. Y la desigualdad cambia según se mida antes o después de impuestos y transferencias.</p>
 <h2>2. ¿Por qué existe desigualdad?</h2>
+${figAgain('c17_mkt')}
 <ul>
 <li><b>Diferencias de capital humano:</b> educación, experiencia y habilidades llevan a salarios distintos.</li>
 <li><b>Discriminación</b> por género, raza o lugar de origen.</li>
@@ -47,6 +48,7 @@ ${fig('c18_lorenz')}
 </ul>
 <h2>3. Redistribución</h2>
 <p>Los gobiernos redistribuyen con: <b>impuestos progresivos</b> (pagan un porcentaje mayor los que más ganan), <b>transferencias</b> (programas de asistencia, pensiones, subsidios) y <b>provisión pública</b> de educación y salud. Hay una <b>gran disyuntiva</b>: redistribuir reduce la desigualdad, pero los impuestos reducen incentivos y generan pérdida irrecuperable (capítulo 6). Cuánto redistribuir es una decisión de valores (capítulo 5: Rawls, utilitarismo, Nozick), no solo técnica. Prueba el control de redistribución en la figura.</p>
+${figAgain('c6_tax')}
 ${warn('<p>Un Gini alto no dice por qué hay desigualdad ni si es injusta; es solo una medida. Hay que analizar sus causas (oportunidades vs. esfuerzo) y las políticas que la afectan.</p>')}
 `,
 terms:[['Quintil','Una quinta parte de la población.'],['Curva de Lorenz','Gráfica del % acumulado del ingreso frente al % acumulado de la población.'],['Coeficiente de Gini','Mide la desigualdad entre 0 y 1.'],['Impuesto progresivo','El porcentaje aumenta con el ingreso.'],['Transferencia','Pago del gobierno sin contraprestación.'],['Capital humano','Conocimientos y habilidades.']],

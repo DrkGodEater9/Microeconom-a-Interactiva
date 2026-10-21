@@ -1,7 +1,7 @@
 /** Capítulo 20 */
 import { FIGS, CHAPTERS } from '../../engine/registry.js';
 import { f$, fn } from '../../engine/format.js';
-import { warn, fig } from '../../engine/blocks.js';
+import { warn, fig, figAgain } from '../../engine/blocks.js';
 
 FIGS.c20_trade = {
   title:'Importaciones, ganadores y perdedores y aranceles (ejemplo ilustrativo)',
@@ -43,14 +43,17 @@ learn:['Explicar por qué se comercia (ventaja comparativa).','Identificar ganad
 html:`
 <h2>1. Cómo funciona el comercio internacional</h2>
 <p>Los bienes y servicios que compramos del exterior son <b>importaciones</b>; los que vendemos, <b>exportaciones</b>. El comercio surge por la <b>ventaja comparativa</b> del capítulo 2: cada país produce lo que le cuesta menos sacrificar y lo intercambia. Así, todos pueden consumir más de lo que producirían aislados. Un país importa un bien si su <b>precio mundial</b> es menor que su precio interno sin comercio, y lo exporta si es mayor.</p>
+${figAgain('c3_eq')}
 <h2>2. Ganadores y perdedores</h2>
 <p>Cuando el precio mundial es <b>menor</b> que el interno, el país importa. Los <b>consumidores</b> se benefician (menor precio, más cantidad) y los <b>productores locales</b> pierden (venden menos y a menor precio). Pero la ganancia de los consumidores supera la pérdida de los productores: hay <b>ganancia neta</b>. Con exportaciones, ocurre lo contrario: ganan los productores, pierden los consumidores, y el país gana en conjunto.</p>
 ${fig('c20_trade')}
 <h2>3. Restricciones al comercio</h2>
 <h3>Aranceles</h3>
 <p>Un <b>arancel</b> es un impuesto a las importaciones. Eleva el precio interno, aumenta la producción local, reduce el consumo y las importaciones, y genera ingreso para el gobierno. Pero causa <b>pérdida irrecuperable</b> (dos triángulos) y los consumidores pierden más de lo que ganan los productores y el gobierno.</p>
+${figAgain('c6_tax')}
 <h3>Cuotas de importación</h3>
 <p>Una <b>cuota</b> limita la cantidad que se puede importar. Sus efectos en precios y cantidades son parecidos a los de un arancel, pero el «ingreso» (la diferencia de precios) lo reciben los importadores con licencia o el gobierno extranjero, no el gobierno nacional.</p>
+${figAgain('c20_trade')}
 <h2>4. Argumentos a favor de restringir el comercio</h2>
 <ul>
 <li><b>Seguridad nacional:</b> no depender del exterior en bienes estratégicos.</li>
