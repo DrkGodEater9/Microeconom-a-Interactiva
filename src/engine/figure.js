@@ -60,6 +60,7 @@ export function mountFig(root, cfg) {
   readEl.className = 'readouts';
   const infoEl = document.createElement('div');
   infoEl.className = 'fig-info idle';
+  infoEl.setAttribute('aria-live', 'polite');
   const sayEl = document.createElement('div');
   sayEl.className = 'fig-status';
   main.append(plotsEl, legend);
@@ -300,6 +301,11 @@ export function mountFig(root, cfg) {
         { class: cls, 'data-id': e.id || '', style: `color:${col(e.color)}` },
         e.k === 'pt' || e.k === 'txt' || e.k === 'box' ? gTop : gClip,
       );
+      if (hit) {
+        g.setAttribute('tabindex', '0');
+        g.setAttribute('role', 'button');
+        g.setAttribute('aria-label', String(e.info[0]).replace(/<[^>]+>/g, ''));
+      }
       let lab = null;
       if (e.k === 'line') {
         const d = e.pts
@@ -331,13 +337,15 @@ export function mountFig(root, cfg) {
           },
           g,
         );
-        const lp = e.pts[e.lp != null ? e.lp : e.pts.length - 1];
-        lab = e.label && {
-          t: typeof e.label === 'string' ? e.label : e.label.t,
-          at: e.label.at || lp,
-          dx: e.label.dx != null ? e.label.dx : 6,
-          dy: e.label.dy != null ? e.label.dy : -7,
-          anchor: e.label.anchor || 'start',
+        const lp = e.pts[Math.min(e.lp != null ? e.lp : e.pts.length - 1, e.pts.length - 1)];
+        // una etiqueta de texto es un string: no leer .at/.anchor de String.prototype
+        const L = typeof e.label === 'string' ? { t: e.label } : e.label;
+        lab = L && {
+          t: L.t,
+          at: L.at || lp,
+          dx: L.dx != null ? L.dx : 6,
+          dy: L.dy != null ? L.dy : -7,
+          anchor: L.anchor || 'start',
         };
       } else if (e.k === 'arr') {
         const [a, b] = [e.from, e.to];
@@ -395,12 +403,13 @@ export function mountFig(root, cfg) {
           });
           cx /= e.pts.length;
           cy /= e.pts.length;
+          const L = typeof e.label === 'string' ? { t: e.label } : e.label;
           lab = {
-            t: typeof e.label === 'string' ? e.label : e.label.t,
-            at: e.label.at || [cx, cy],
-            dx: e.label.dx || 0,
-            dy: e.label.dy || 4,
-            anchor: e.label.anchor || 'middle',
+            t: L.t,
+            at: L.at || [cx, cy],
+            dx: L.dx || 0,
+            dy: L.dy || 4,
+            anchor: L.anchor || 'middle',
           };
         }
       } else if (e.k === 'pt') {
@@ -504,12 +513,13 @@ export function mountFig(root, cfg) {
           },
           g,
         );
-        lab = e.label && {
-          t: typeof e.label === 'string' ? e.label : e.label.t,
+        const L = typeof e.label === 'string' ? { t: e.label } : e.label;
+        lab = L && {
+          t: L.t,
           at: e.at,
-          dx: e.label.dx != null ? e.label.dx : 10,
-          dy: e.label.dy != null ? e.label.dy : -10,
-          anchor: e.label.anchor || 'start',
+          dx: L.dx != null ? L.dx : 10,
+          dy: L.dy != null ? L.dy : -10,
+          anchor: L.anchor || 'start',
         };
       } else if (e.k === 'box') {
         const cx = X(e.at[0]),
@@ -582,11 +592,22 @@ export function mountFig(root, cfg) {
         }
       }
       if (hit) {
-        g.addEventListener('mouseenter', () => {
+        // el cursor solo resalta con ratón; al tocar o usar el teclado se fija con clic/Enter
+        g.addEventListener('pointerenter', (ev) => {
+          if (ev.pointerType !== 'mouse') return;
           hov = e.id;
           paint();
         });
-        g.addEventListener('mouseleave', () => {
+        g.addEventListener('pointerleave', (ev) => {
+          if (ev.pointerType !== 'mouse') return;
+          hov = null;
+          paint();
+        });
+        g.addEventListener('focus', () => {
+          hov = e.id;
+          paint();
+        });
+        g.addEventListener('blur', () => {
           hov = null;
           paint();
         });
@@ -594,8 +615,33 @@ export function mountFig(root, cfg) {
           sel = sel === e.id ? null : e.id;
           paint();
         });
+        g.addEventListener('keydown', (ev) => {
+          if (ev.key !== 'Enter' && ev.key !== ' ') return;
+          ev.preventDefault();
+          sel = sel === e.id ? null : e.id;
+          paint();
+        });
         if (!items.find((i) => i.id === e.id)) items.push(e);
       }
+    });
+    keepLabelsInside(P.svg);
+  }
+  /** Desplaza los textos que se saldrían del borde del gráfico (p. ej. en pantallas estrechas). */
+  function keepLabelsInside(svg) {
+    if (!svg.isConnected || typeof svg.getBBox !== 'function') return;
+    const pad = 4;
+    svg.querySelectorAll('text').forEach((t) => {
+      let b;
+      try {
+        b = t.getBBox();
+      } catch {
+        return;
+      }
+      if (!b.width) return;
+      let dx = 0;
+      if (b.x + b.width > W - pad) dx = W - pad - (b.x + b.width);
+      else if (b.x < pad) dx = pad - b.x;
+      if (dx) t.setAttribute('transform', `translate(${dx} 0)`);
     });
   }
   function paint() {
@@ -637,11 +683,13 @@ export function mountFig(root, cfg) {
         b.dataset.id = i.id;
         b.style.setProperty('--c', col(i.color));
         b.innerHTML = `<i></i>${i.legend || i.info[0]}`;
-        b.onmouseenter = () => {
+        b.onpointerenter = (ev) => {
+          if (ev.pointerType !== 'mouse') return;
           hov = i.id;
           paint();
         };
-        b.onmouseleave = () => {
+        b.onpointerleave = (ev) => {
+          if (ev.pointerType !== 'mouse') return;
           hov = null;
           paint();
         };

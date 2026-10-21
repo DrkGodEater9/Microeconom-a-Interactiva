@@ -5,6 +5,14 @@ Guía interactiva de microeconomía, capítulo por capítulo, basada en el libro
 cada gráfica se puede tocar y mover: al pasar el cursor sobre una curva, un área o un punto, un panel
 explica qué representa, y los controles muestran qué significa mover una intersección.
 
+## Funciones de estudio
+
+- **Gráficas de repaso plegables**: donde el texto vuelve a mencionar una curva ya vista aparece «Ver de nuevo la gráfica», cerrada por defecto y con todos sus controles al abrirla (`figAgain('c3_eq', 'nota opcional')` en el HTML del capítulo). Cada capítulo tiene un botón para abrirlas todas.
+- **Progreso**: capítulos vistos, cuestionarios perfectos, «Continuar donde lo dejaste» y repaso de preguntas falladas (todo en `localStorage`).
+- **Búsqueda** en la barra lateral (sin tildes ni mayúsculas), **índice de secciones** flotante y **enlaces directos** a cada sección (`#/c5/<sección>`).
+- Barra lateral contraíble, tema claro/oscuro, accesible con teclado, adaptada a móvil y a impresión.
+- **Sin conexión**: fuentes incluidas en el paquete y service worker (PWA instalable).
+
 ## Requisitos
 
 - Node.js 18 o superior
@@ -46,6 +54,10 @@ src/
   app/                  Aplicación: rutas, vistas, menú, tema, créditos
     views/home.js       Portada
     views/chapter.js    Vista de capítulo
+    views/repaso.js     Repaso de preguntas falladas
+    progress.js         Progreso y estado guardado
+    search.js, sections.js, tools.js   Búsqueda, secciones/enlaces e índice flotante
+public/                 Manifest, íconos y service worker (PWA)
   content/
     chapters/chNN.js    Un archivo por capítulo (texto + figuras + cuestionario + términos)
     extras.js           Idea clave, requisitos, resumen y ejercicios guiados por figura
@@ -76,7 +88,6 @@ colócala en el HTML del capítulo con `${fig('mi_figura')}`. `build` devuelve:
 - Los ejemplos numéricos del libro (CD-R, pizzas, camisas, cortes de cabello, la restricción
   presupuestaria de Isabel) se usan tal cual; los demás números son ilustrativos y están marcados
   en la propia página.
-- Las fuentes se cargan desde Google Fonts. Para un uso sin conexión, descárgalas y decláralas con
-  `@font-face` en `src/styles/tokens.css`.
+- Las fuentes (Source Sans 3 y Source Serif 4) vienen incluidas con `@fontsource`; no se necesita conexión.
 - Esta guía es material de estudio derivado del libro; no es una publicación oficial y los derechos
   de la obra pertenecen a sus titulares.
